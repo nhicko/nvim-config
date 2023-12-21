@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     }
 --    use('rebelot/kanagawa.nvim')
     use('rose-pine/neovim')
+    use {'kevinhwang91/nvim-bqf'}
     use('rebelot/kanagawa.nvim')
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
@@ -45,21 +46,30 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-    use { 'alexghergh/nvim-tmux-navigation', config = function()
 
-        local nvim_tmux_nav = require('nvim-tmux-navigation')
+--    use({
+--        "L3MON4D3/LuaSnip",
+--        -- follow latest release.
+--        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+--        -- install jsregexp (optional!:).
+--        run = "make install_jsregexp"
+--    })
 
-        nvim_tmux_nav.setup {
-            disable_when_zoomed = true -- defaults to false
-        }
-
-        vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-        vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-        vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-        vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
-        vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
-        vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
-
-    end
-    }
+--    use { 'alexghergh/nvim-tmux-navigation', config = function()
+--
+--        local nvim_tmux_nav = require('nvim-tmux-navigation')
+--
+--        nvim_tmux_nav.setup {
+--            disable_when_zoomed = true -- defaults to false
+--        }
+--
+--        vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+--        vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+--        vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+--        vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+--        vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+--        vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+--
+--    end
+--    }
 end)
