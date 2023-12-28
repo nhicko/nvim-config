@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
 	use('tpope/vim-surround')
     use('jremmen/vim-ripgrep')
 	use('ThePrimeagen/harpoon')
+    use('kevinhwang91/nvim-bqf')
 	use('mbbill/undotree')
     use {
         'nvim-lualine/lualine.nvim',

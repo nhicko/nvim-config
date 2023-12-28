@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/npc/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["nvim-bqf"] = {
+    loaded = true,
+    path = "/home/npc/.local/share/nvim/site/pack/packer/start/nvim-bqf",
+    url = "https://github.com/kevinhwang91/nvim-bqf"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/npc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
