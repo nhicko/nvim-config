@@ -31,7 +31,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.keymap.set( {'i', 't'}, 'jk', '<ESC>')
+vim.keymap.set( { 'i', 't' }, 'jk', '<ESC>')
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
