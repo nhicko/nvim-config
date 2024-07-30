@@ -107,10 +107,22 @@ vim.keymap.set("n", "<C-k>", ":cprev<CR>", { silent = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+<<<<<<< HEAD
 vim.keymap.set("n", "@tecon", "ifilename:<CR>source:<CR>destination:<CR>permission:<CR>mode of transfer: text<ESC>4k$a")
 vim.keymap.set("n", "@scp", "iscp _ scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs<ESC>^f_s")
 
 vim.keymap.set({ "i", "t" }, "jk", "<ESC>")
+=======
+vim.keymap.set(
+	"n",
+	"<leader>@t",
+	"ifilename:<CR>source:<CR>destination:<CR>permission:<CR>mode of transfer: text<ESC>4k$a"
+)
+vim.keymap.set("n", "<leader>@s", "iscp _ scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs<ESC>^f_s")
+
+vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("t", "jk", "<C-\\><C-N>")
+>>>>>>> f7967a4 (added)
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -138,6 +150,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+<<<<<<< HEAD
+=======
+	"tpope/vim-fugitive",
+>>>>>>> f7967a4 (added)
 
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -632,6 +648,11 @@ require("lazy").setup({
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+<<<<<<< HEAD
+=======
+					{ name = "nvim_lua" },
+					{ name = "buffer" },
+>>>>>>> f7967a4 (added)
 					{ name = "path" },
 				},
 			})
