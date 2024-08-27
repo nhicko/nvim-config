@@ -107,9 +107,6 @@ vim.keymap.set("n", "<C-k>", ":cprev<CR>", { silent = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "@tecon", "ifilename:<CR>source:<CR>destination:<CR>permission:<CR>mode of transfer: text<ESC>4k$a")
-vim.keymap.set("n", "@scp", "iscp _ scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs<ESC>^f_s")
-
 vim.keymap.set({ "i", "t" }, "jk", "<ESC>")
 vim.keymap.set(
 	"n",
