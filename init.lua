@@ -108,6 +108,8 @@ vim.keymap.set("t", "jk", "<C-\\><C-N>")
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
+-- for luasnip (selection)
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -567,6 +569,13 @@ require("lazy").setup({
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
 			require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets" })
+
+			-- snippet choice
+			vim.keymap.set({ "i", "s" }, "<C-E>", function()
+				if luasnip.choice_active() then
+					luasnip.change_choice(1)
+				end
+			end, { silent = true })
 
 			cmp.setup({
 				snippet = {
