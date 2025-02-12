@@ -79,29 +79,22 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set("n", "<C-j>", ":cnext<CR>", { silent = true })
-vim.keymap.set("n", "<C-k>", ":cprev<CR>", { silent = true })
+vim.keymap.set("n", "<M-j>", ":cnext<CR>", { silent = true })
+vim.keymap.set("n", "<M-k>", ":cprev<CR>", { silent = true })
+vim.keymap.set("n", "<M-h>", ":tabp<CR>", { silent = true })
+vim.keymap.set("n", "<M-l>", ":tabn<CR>", { silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "@tecon", "ifilename:<CR>source:<CR>destination:<CR>permission:<CR>mode of transfer: text<ESC>4k$a")
-vim.keymap.set("n", "@scp", "iscp _ scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs<ESC>^f_s")
 vim.keymap.set("n", "<leader>*", function()
 	local c = vim.fn.input("Enter commit message: ")
-	vim.cmd("!cd ~/work; git add .;git commit -m " .. c .. " ; git push work master")
+	vim.cmd("!cd ~/work; git add %;git commit -m " .. c .. " ; git push work master")
 end)
 
-vim.keymap.set({ "i", "t" }, "jk", "<ESC>")
-vim.keymap.set(
-	"n",
-	"<leader>@t",
-	"ifilename:<CR>source:<CR>destination:<CR>permission:<CR>mode of transfer: text<ESC>4k$a"
-)
-vim.keymap.set("n", "<leader>@s", "iscp _ scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs<ESC>^f_s")
-
 vim.keymap.set("i", "jk", "<ESC>")
-vim.keymap.set("t", "jk", "<C-\\><C-N>")
+vim.keymap.set("t", "jk", "<C-\\><C-n>")
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
