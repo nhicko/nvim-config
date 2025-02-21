@@ -88,8 +88,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>*", function()
-	local c = vim.fn.input("Enter commit message: ")
-	vim.cmd("!cd ~/work; git add %;git commit -m " .. c .. " ; git push work master")
+	local commit_msg = vim.fn.input("Enter commit message: ")
+	vim.cmd("!cd ~/work; git add .;git commit -m " .. commit_msg .. " ; git push work master")
 end)
 
 vim.keymap.set("i", "jk", "<ESC>")
@@ -283,6 +283,19 @@ require("lazy").setup({
 		end,
 	},
 
+	{
+		"nvim-java/nvim-java",
+		dependencies = {
+			"nvim-java/nvim-java-refactor",
+			"nvim-java/nvim-java-core",
+			"nvim-java/nvim-java-test",
+			"nvim-java/nvim-java-dap",
+			{ "JavaHello/spring-boot.nvim", commit = "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
+			"MunifTanjim/nui.nvim",
+			"nvim-java/lua-async-await",
+		},
+	},
+
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -425,6 +438,7 @@ require("lazy").setup({
 			local servers = {
 				-- clangd = {},
 				-- gopls = {},
+				jdtls = {},
 				pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -465,6 +479,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"jdtls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -703,7 +718,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+			ensure_installed = { "java", "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "python" },
 			-- Autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
@@ -756,6 +771,10 @@ require("lazy").setup({
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
 		},
+	},
+	-- Custom Plugins not part of kickstart
+	{
+		"xiyaowong/transparent.nvim",
 	},
 }, {
 	ui = {
