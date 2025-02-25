@@ -89,7 +89,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>*", function()
 	local commit_msg = vim.fn.input("Enter commit message: ")
-	vim.cmd("!cd ~/work; git add .;git commit -m " .. commit_msg .. " ; git push work master")
+	vim.cmd("git add %;git commit -m " .. commit_msg .. " ; git push work master")
 end)
 
 vim.keymap.set("i", "jk", "<ESC>")
