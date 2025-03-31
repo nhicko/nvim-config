@@ -1,0 +1,18 @@
+{
+  "tecon": {
+    "prefix": "tecon",
+    "body": [
+      "filename: ${1:filename}",
+      "source: ${2:servername_source_dir}",
+      "destination: ${3:servername_destination_dir}",
+      "permission: ${4:0755}",
+      "mode of transfer: ${5:txt}"
+    ]
+  },
+  "scp": {
+	  "prefix": "scp",
+	  "body": [
+		"scp ${1:filename} scpid@133.100.205.213:/cygdrive/v/UNITAS/"
+	  ]
+  }
+}
