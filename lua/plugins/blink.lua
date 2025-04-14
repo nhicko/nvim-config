@@ -11,9 +11,10 @@ return {
 		},
 		completion = { documentation = { auto_show = false } },
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer' },
-		},
+			-- default = { 'lsp', 'path', 'snippets', 'buffer' },
+			default = { 'lsp', 'snippets', 'buffer' }
+			},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
-	opts_extend = { 'sources.default' },
+	opts_extend = { 'sources.default' }
 }
