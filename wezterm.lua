@@ -13,5 +13,6 @@ c.audible_bell = "Disabled"
 c.scrollback_lines = 3000
 c.default_workspace = "main"
 c.max_fps = 240
+c.enable_tab_bar = false
 
 return c
