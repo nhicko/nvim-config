@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.dj		set filetype=dj
+au BufRead,BufNewFile *.md		set filetype=md
