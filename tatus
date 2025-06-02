@@ -1,0 +1,61 @@
+[1mdiff --git a/lazy-lock.json b/lazy-lock.json[m
+[1mindex 569e32b..b5da7e8 100644[m
+[1m--- a/lazy-lock.json[m
+[1m+++ b/lazy-lock.json[m
+[36m@@ -1,16 +1,9 @@[m
+ {[m
+[31m-  "LuaSnip": { "branch": "master", "commit": "faf3c94a44508cec1b961406d36cc65113ff3b98" },[m
+[31m-  "blink.cmp": { "branch": "main", "commit": "49f211fe5d729df53df4c042d7c3464cf47d199e" },[m
+[31m-  "cmp-nvim-lsp": { "branch": "main", "commit": "a8912b88ce488f411177fc8aed358b04dc246d7b" },[m
+[31m-  "cmp-nvim-lsp-signature-help": { "branch": "main", "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7" },[m
+[31m-  "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },[m
+[31m-  "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },[m
+   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },[m
+   "lualine.nvim": { "branch": "master", "commit": "0c6cca9f2c63dadeb9225c45bc92bb95a151d4af" },[m
+[31m-  "mason-lspconfig.nvim": { "branch": "main", "commit": "67da97f8c2fd12d05427bb485ce07ee6418e0a51" },[m
+[32m+[m[32m  "mason-lspconfig.nvim": { "branch": "main", "commit": "4cad8f67d9594565549442e2e8c68556761ab7a9" },[m
+   "mason.nvim": { "branch": "main", "commit": "8024d64e1330b86044fed4c8494ef3dcd483a67c" },[m
+[31m-  "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },[m
+[31m-  "nvim-lspconfig": { "branch": "master", "commit": "b8e7957bde4cbb3cb25a13a62548f7c273b026e9" },[m
+[32m+[m[32m  "nvim-lspconfig": { "branch": "master", "commit": "8adb3b5938f6074a1bcc36d3c3916f497d2e8ec4" },[m
+   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },[m
+   "nvim-web-devicons": { "branch": "master", "commit": "1fb58cca9aebbc4fd32b086cb413548ce132c127" },[m
+   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },[m
+[1mdiff --git a/lua/plugins/lsp.lua b/lua/plugins/lsp.lua[m
+[1mindex dfac237..c0b829a 100755[m
+[1m--- a/lua/plugins/lsp.lua[m
+[1m+++ b/lua/plugins/lsp.lua[m
+[36m@@ -1,8 +1,8 @@[m
+ return {[m
+ 	'neovim/nvim-lspconfig',[m
+[32m+[m	[32m{'williamboman/mason-lspconfig.nvim', opts = {} },[m
+ 	dependencies = {[m
+ 		{ 'williamboman/mason.nvim', opts = {} },[m
+[31m-		{ 'williamboman/mason-lspconfig.nvim', opts = {} },[m
+ 		'hrsh7th/cmp-nvim-lsp',[m
+ 		{ 'hrsh7th/nvim-cmp', event = 'InsertEnter' },[m
+ 		'hrsh7th/cmp-nvim-lsp-signature-help',[m
+[1mdiff --git a/snippets/mop.json b/snippets/mop.json[m
+[1mdeleted file mode 100644[m
+[1mindex c97a80d..0000000[m
+[1m--- a/snippets/mop.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,18 +0,0 @@[m
+[31m-{[m
+[31m-  "tecon": {[m
+[31m-    "prefix": "tecon",[m
+[31m-    "body": [[m
+[31m-      "filename: ${1:filename}",[m
+[31m-      "source: ${2:servername_source_dir}",[m
+[31m-      "destination: ${3:servername_destination_dir}",[m
+[31m-      "permission: ${4:0755}",[m
+[31m-      "mode of transfer: ${5:txt}"[m
+[31m-    ][m
+[31m-  },[m
+[31m-  "scp": {[m
+[31m-	  "prefix": "scp",[m
+[31m-	  "body": [[m
+[31m-		"scp ${1:filename} scpid@133.100.205.213:/cygdrive/v/UNITAS/"[m
+[31m-	  ][m
+[31m-  }[m
+[31m-}[m

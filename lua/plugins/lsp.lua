@@ -1,8 +1,8 @@
 return {
 	'neovim/nvim-lspconfig',
+	{'williamboman/mason-lspconfig.nvim', opts = {} },
 	dependencies = {
 		{ 'williamboman/mason.nvim', opts = {} },
-		{ 'williamboman/mason-lspconfig.nvim', opts = {} },
 		'hrsh7th/cmp-nvim-lsp',
 		{ 'hrsh7th/nvim-cmp', event = 'InsertEnter' },
 		'hrsh7th/cmp-nvim-lsp-signature-help',
