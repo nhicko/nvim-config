@@ -22,3 +22,5 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
+vim.o.statusline = "%F"
+vim.opt.termguicolors = true
