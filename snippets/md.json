@@ -2,17 +2,39 @@
   "tecon": {
     "prefix": "tecon",
     "body": [
+      "[TECON] transfer of file",
       "filename: ${1:filename}",
-      "source: ${2:servername_source_dir}",
-      "destination: ${3:servername_destination_dir}",
-      "permission: ${4:0755}",
-      "mode of transfer: ${5:txt}"
+      "source: ${2:servername}:/{3:sourcedir}",
+      "destination: ${4:servername}:/{5:destinationdir}",
+      "permission: ${6:0755}",
+      "mode of transfer: ${7:txt}"
     ]
   },
   "scp": {
 	  "prefix": "scp",
 	  "body": [
 		"scp ${1:filename} scpid@133.100.205.213:/cygdrive/v/UNITAS/"
+	  ]
+  },
+  "dba": {
+	  "prefix": "dba",
+	  "body": [
+		  "[DBA] review of script",
+		  "review of script"
+	  ]
+  },
+  "co": {
+	  "prefix": "co",
+	  "body": [
+		  "[CO] execute script",
+		  "* login to ${1:servername} using root ID."
+	  ]
+  },
+  "sam": {
+	  "prefix": "sam",
+	  "body": [
+		  "[SAM] turnover of root",
+		  "turnover of root credentials to ${1:supportTeam}"
 	  ]
   }
 }
