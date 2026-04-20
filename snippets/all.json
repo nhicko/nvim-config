@@ -1,0 +1,30 @@
+{
+        "tecon": {
+                "prefix": "tecon",
+                "body": [
+                        "## TECON\n",
+                        "filename:${1:filename}\n",
+                        "source:${2:source}\n",
+                        "destination${3:destination}\n",
+                        "permission:${4:permission}\n",
+                        "mode of transfer:${5:mode_of_transfer}"
+                ],
+                "description": "tecon info needed"
+        },
+        "dba": {
+                "prefix": "dba",
+                "body": [
+                        "## DBA\n",
+                        "review of the following files:"
+                ],
+                "description": "db admin info needed"
+        },
+        "computer operator": {
+                "prefix": "co",
+                "body": [
+                        "## CO",
+                        "** login to ${1:servername} using root ID and execute the ff comamnd:\n"
+                ],
+                "description": "computer operator"
+        }
+}

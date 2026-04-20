@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 -- for WSL1, disable if not using WSL1
-lua vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
+vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
 
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', '<S-n>', '<S-n>zz')
