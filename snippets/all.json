@@ -2,19 +2,19 @@
         "tecon": {
                 "prefix": "tecon",
                 "body": [
-                        "## TECON\n",
-                        "filename:${1:filename}\n",
-                        "source:${2:source}\n",
-                        "destination${3:destination}\n",
-                        "permission:${4:permission}\n",
-                        "mode of transfer:${5:mode_of_transfer}"
+                        "## TECON",
+                        "filename: ${1:filename}",
+                        "source: ${2:source_dir}",
+                        "destination: ${3:destination_dir}\n",
+                        "permission: ${4:0755}\n",
+                        "mode of transfer: ${5:mode_of_transfer}"
                 ],
                 "description": "tecon info needed"
         },
         "dba": {
                 "prefix": "dba",
                 "body": [
-                        "## DBA\n",
+                        "## DBA",
                         "review of the following files:"
                 ],
                 "description": "db admin info needed"
@@ -28,9 +28,9 @@
                 "description": "computer operator"
         },
         "scp command": {
-                "prefix": "scp",
+                "prefix": "scpid",
                 "body": [
-                        ""
+                        "scpid@133.100.205.213:/cygdrive/v/UNITAS/PRODlogs"
                 ],
                 "description": "issue scp command"
         }
