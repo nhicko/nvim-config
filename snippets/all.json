@@ -26,5 +26,13 @@
                         "** login to ${1:servername} using root ID and execute the ff comamnd:\n"
                 ],
                 "description": "computer operator"
+        },
+        "scp command": {
+                "prefix": "scp",
+                "body": [
+                        ""
+                ],
+                "description": "issue scp command"
         }
+
 }
