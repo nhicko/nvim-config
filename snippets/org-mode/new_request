@@ -1,0 +1,12 @@
+# name: new request template
+# key: newreq
+# --
+** TODO $1 $2
+   SCHEDULED: `(format-time-string "<%Y-%m-%d %a>")`
+   CLOSED:
+   :PROPERTIES:
+   :REFERENCE_NO: $3
+   :ENVIRONMENT: $4
+   :APPLICATION_CODE: $5
+   :END:
+$0

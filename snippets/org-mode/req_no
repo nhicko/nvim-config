@@ -1,0 +1,12 @@
+# name: requests
+# key: reqno
+# --
+** TODO $1 $2 
+   SCHEDULED: $3
+   CLOSED: 
+   :PROPERTIES:
+   :REFERENCE_NO:	$4
+   :ENVIRONMENT:	$5
+   :APPLICATION_CODE:	$6
+   :END:
+$0

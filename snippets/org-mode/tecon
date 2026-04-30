@@ -1,0 +1,8 @@
+# name: tecon mop
+# key: tecon
+# --
+filename: $1
+source directory: $2
+target directory: $3
+permission: ${4:0755}
+mode of transfer: ${5:text}
