@@ -49,7 +49,7 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/saghen/blink.cmp",
-                version = '1.10.1',
+                version = 'v1.10.1',
                 build = 'cargo build --release' },
 	{ src = "https://github.com/windwp/nvim-autopairs" }
 })
