@@ -104,6 +104,18 @@ require('orgmode').setup({
 -- Experimental LSP support
 vim.lsp.enable('org')
 
+-- Function to insert formatted date
+local function insert_custom_date()
+  local date = os.date("%Y-%m-%d %a") -- e.g. 2026-05-08 Fri
+  date = "<" .. date .. ">"           -- wrap in <>
+  vim.api.nvim_put({date}, "c", true, true)
+end
+
+-- Insert mode mapping Ctrl-d
+vim.keymap.set("i", "<C-d>", function()
+  insert_custom_date()
+end, { noremap = true })
+
 vim.lsp.enable ({ 'jdtls',
                   'lua_ls',
                   'bash-language-server',
