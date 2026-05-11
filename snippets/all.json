@@ -5,8 +5,8 @@
                         "## TECON",
                         "filename: ${1:filename}",
                         "source: ${2:source_dir}",
-                        "destination: ${3:destination_dir}\n",
-                        "permission: ${4:0755}\n",
+                        "destination: ${3:destination_dir}",
+                        "permission: ${4:0755}",
                         "mode of transfer: ${5:mode_of_transfer}"
                 ],
                 "description": "tecon info needed"
