@@ -1,0 +1,22 @@
+{
+        "task~1": {
+                "prefix" : "task1",
+                "body" : "- [ ] ",
+                "description" : "checkbox task"
+        },
+        "new_request": {
+                "prefix" : "new_request",
+                "body" : [
+                        "** TODO ${1:request_number} ${2:description}",
+                        "SCHEDULED: ${3:date_today}",
+                        "CLOSED: ",
+                        ":PROPERTIES:",
+                        ":REFERENCE_NO: ${4:reference_number}",
+                        ":ENVIRONMENT: ${5:UAT}",
+                        ":APPLICATION_CODE: ${6:App_code}",
+                        ":END:"
+                ],
+                "description":"Create new request"
+        }
+}
+
