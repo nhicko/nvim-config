@@ -101,15 +101,27 @@ require('orgmode').setup({
   org_agenda_files = '~/orgfiles/**/*',
   org_default_notes_file = '~/orgfiles/refile.org',
 })
--- Experimental LSP support
-vim.lsp.enable('org')
-
 -- Function to insert formatted date
 local function insert_custom_date()
   local date = os.date("%Y-%m-%d %a") -- e.g. 2026-05-08 Fri
   date = "<" .. date .. ">"           -- wrap in <>
   vim.api.nvim_put({date}, "c", true, true)
 end
+
+-- Copy inside BEGIN_SRC and END_SRC for ORG MODE only
+vim.keymap.set("n", "<C-h>", function()
+  local s = vim.fn.search("^#+BEGIN_SRC", "bnW")
+  local e = vim.fn.search("^#+END_SRC", "nW")
+
+  if s == 0 or e == 0 or e <= s then
+    print("No code block found")
+    return
+  end
+
+  -- Copy ONLY inner lines (exclude BEGIN/END)
+  vim.cmd((s + 1) .. "," .. (e - 1) .. "y")
+  print("Inner code copied (no BEGIN/END)")
+end)
 
 -- Insert mode mapping Ctrl-d
 vim.keymap.set("i", "<C-d>", function()
@@ -120,5 +132,6 @@ vim.lsp.enable ({ 'jdtls',
                   'lua_ls',
                   'bash-language-server',
                   'markdown',
+                  'org',
                   'rust-analyzer'
                 })
