@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 -- for WSL1, disable if not using WSL1
-vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
+-- vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
 
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', '<S-n>', '<S-n>zz')
@@ -98,6 +98,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-orgmode/orgmode'}
 })
 require('orgmode').setup({
+  org_todo_keywords = {'TODO', 'IN_PROGRESS', 'WAITING', '|', 'DONE', 'CANCELLED'},
   org_agenda_files = '~/orgfiles/**/*',
   org_default_notes_file = '~/orgfiles/refile.org',
 })
@@ -135,3 +136,5 @@ vim.lsp.enable ({ 'jdtls',
                   'org',
                   'rust-analyzer'
                 })
+
+    
