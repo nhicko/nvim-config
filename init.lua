@@ -16,9 +16,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.cursorline = true
 
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+-- vim.schedule(function()
+-- 	vim.o.clipboard = "unnamedplus"
+-- end)
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 -- for WSL1, disable if not using WSL1
--- vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
+vim.api.nvim_create_autocmd("TextYankPost",{callback=function() vim.fn.system("clip.exe",vim.fn.getreg('"')) end})
 
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', '<S-n>', '<S-n>zz')
@@ -95,13 +95,18 @@ require('blink.cmp').setup({
 })
 
 vim.pack.add({
-  { src = 'https://github.com/nvim-orgmode/orgmode'}
+  { src = 'https://github.com/nvim-orgmode/orgmode'},
+  { src = 'https://github.com/nvim-orgmode/org-bullets.nvim.git'}
 })
+
 require('orgmode').setup({
-  org_todo_keywords = {'TODO', 'IN_PROGRESS', 'WAITING', '|', 'DONE', 'CANCELLED'},
+  org_todo_keywords = {'TODO', '|', 'DONE'},
   org_agenda_files = '~/orgfiles/**/*',
   org_default_notes_file = '~/orgfiles/refile.org',
 })
+
+require('org-bullets').setup()
+
 -- Function to insert formatted date
 local function insert_custom_date()
   local date = os.date("%Y-%m-%d %a") -- e.g. 2026-05-08 Fri
@@ -128,6 +133,11 @@ end)
 vim.keymap.set("i", "<C-d>", function()
   insert_custom_date()
 end, { noremap = true })
+
+-- Insert mode mapping of Ctrl-t to insert current time HH:MM
+vim.keymap.set("i", "<C-t>", function()
+  return vim.fn.strftime("%H:%M")
+end, { expr = true })
 
 vim.lsp.enable ({ 'jdtls',
                   'lua_ls',
